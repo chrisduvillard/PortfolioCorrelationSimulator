@@ -43,6 +43,8 @@ volatility /= 100
 risk_free_rate = st.sidebar.number_input("Risk-Free Rate (%)", value=0.0, step=0.01) / 100
 
 # Generate the correlation matrix
+
+
 def generate_correlation_matrix(n, corr):
     if n == 1:
         return np.array([[1.0]])
@@ -52,8 +54,11 @@ def generate_correlation_matrix(n, corr):
         return corr_matrix
 
 # Ensure positive definiteness
+
+
 def is_positive_definite(matrix):
     return np.all(np.linalg.eigvals(matrix) > 0)
+
 
 corr_matrix = generate_correlation_matrix(num_assets, correlation)
 
@@ -68,7 +73,10 @@ else:
     trading_days = num_years * 252
 
     # Generate returns
-    mean_vector = np.full(num_assets, mean_return)
+    # mean_vector = np.full(num_assets, mean_return)
+    # Add random variation to mean returns (some positive, some negative)
+    mean_vector = np.random.uniform(low=-mean_return, high=mean_return, size=num_assets)
+
     cov_matrix = corr_matrix * (volatility ** 2)
 
     returns = np.random.multivariate_normal(
@@ -144,7 +152,13 @@ else:
     metrics_df.set_index("Asset", inplace=True)
 
     # Format the dataframe
-    metrics_df = metrics_df.applymap(lambda x: f"{x:.2%}" if isinstance(x, float) else x)
+    for col in ["Sharpe Ratio", "Sortino Ratio", "Calmar Ratio"]:
+        metrics_df[col] = metrics_df[col].apply(lambda x: f"{x:.2f}")
+
+    # Format other metrics as percentages
+    for col in metrics_df.columns:
+        if col not in ["Sharpe Ratio", "Sortino Ratio", "Calmar Ratio"]:
+            metrics_df[col] = metrics_df[col].apply(lambda x: f"{x:.2%}")
 
     st.dataframe(metrics_df)
 
