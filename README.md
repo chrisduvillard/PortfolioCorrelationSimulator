@@ -1,7 +1,7 @@
 
 # Synthetic Asset Portfolio Simulator
 
-This is a Python-based application that simulates asset prices in a portfolio, allowing you to explore correlations, returns, volatility, and portfolio performance. The app is built using [Streamlit](https://streamlit.io/), [NumPy](https://numpy.org/), [Pandas](https://pandas.pydata.org/), and [Plotly](https://plotly.com/), making it interactive and easy to use for financial simulation purposes.
+This is a Python-based application that simulates asset prices in a portfolio, allowing you to explore correlations, returns, volatility, and portfolio performance. The app is interactive and easy to use for financial simulation purposes.
 
 ![App Screenshot](image.png)
 
