@@ -1,164 +1,96 @@
 
-# PortfolioCorrelationSimulator
+# Synthetic Asset Portfolio Simulator
 
-A Streamlit application that simulates the performance of a synthetic asset portfolio based on user-defined parameters.
+This is a Python-based application that simulates asset prices in a portfolio, allowing you to explore correlations, returns, volatility, and portfolio performance. The app is built using [Streamlit](https://streamlit.io/), [NumPy](https://numpy.org/), [Pandas](https://pandas.pydata.org/), and [Plotly](https://plotly.com/), making it interactive and easy to use for financial simulation purposes.
+
+![App Screenshot](image.png)
 
 ## Features
 
-- **Customizable Parameters**: Adjust the number of assets (1 to 20), average correlation between assets (-1 to 1), mean return, volatility, and investment horizon (1 to 10 years).
-- **Interactive Charts**: Visualize asset performance and portfolio metrics using Plotly line charts.
-- **Comprehensive Metrics**: Analyze key performance indicators such as Total Cumulative Return, Annualized Return, Annualized Volatility, Maximum Drawdown, Sharpe Ratio, Sortino Ratio, and Calmar Ratio.
-- **User-Friendly Interface**: Simple and intuitive controls using Streamlit's interactive widgets.
+- **Simulate asset prices:** Generate asset price paths using random returns based on user-defined or randomized mean returns and volatility.
+- **Adjustable correlation:** Control the average correlation between assets in the portfolio.
+- **Custom parameters:** Set the number of assets, the number of years for the simulation, and return and volatility parameters.
+- **Advanced options:** Randomize mean returns and volatility for each asset.
+- **Performance metrics:** Analyze performance metrics such as Sharpe Ratio, Sortino Ratio, Calmar Ratio, Maximum Drawdown, and more.
+- **Correlation matrix:** View and adjust the correlation matrix of assets.
+- **Compare portfolios across correlations:** Evaluate portfolio performance with different correlation settings.
 
 ## Installation
 
-### Prerequisites
-
-- Python 3.7 or higher
-
-### Steps
-
-1. **Clone the Repository**
-
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/PortfolioCorrelationSimulator.git
-   cd PortfolioCorrelationSimulator
+   git clone https://github.com/your-username/PortfolioCorrelationsSimulator.git
+   cd PortfolioCorrelationsSimulator
    ```
 
-2. **Create a Virtual Environment (Optional but Recommended)**
-
+2. **Set up a virtual environment (optional but recommended):**
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 
-3. **Install Dependencies**
-
+3. **Install the required dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
+## How to Run
+
+1. After installing the dependencies, you can run the app using Streamlit:
+   ```bash
+   streamlit run src/asset_correlation_app.py
+   ```
+
+2. This will start a local server. You can access the app by opening the URL provided in the terminal (usually `http://localhost:8501/`).
+
 ## Usage
 
-Run the application with the following command:
+- **Number of Assets:** Select how many assets you want in your portfolio.
+- **Correlation:** Set the average correlation between assets, or let it vary randomly.
+- **Simulation Length:** Choose how many years to simulate.
+- **Return Parameters:** Customize the expected mean annual return and volatility for the assets.
+- **Advanced Options:** Enable randomization of the mean returns and volatility across different assets.
+- **Visualizations and Metrics:** The app displays the asset prices and calculates performance metrics for each asset and the portfolio.
 
-```bash
-streamlit run src/app.py
-```
+## Performance Metrics
 
-This will launch the Streamlit application in your default web browser.
+- **Total Cumulative Return**
+- **Annualized Return**
+- **Annualized Volatility**
+- **Maximum Drawdown**
+- **Sharpe Ratio**
+- **Sortino Ratio**
+- **Calmar Ratio**
 
-## Project Structure
-
-```
-PortfolioCorrelationSimulator/
-├── .gitignore
-├── LICENSE
-├── README.md
-├── requirements.txt
-├── src/
-│   ├── app.py
-│   ├── utils.py (if applicable)
-│   └── __init__.py
-├── data/ (if applicable)
-└── tests/ (if applicable)
-```
+Each of these metrics helps you understand the overall performance and risk profile of the portfolio under different market conditions.
 
 ## Dependencies
 
-- **Streamlit**: Web application framework for Python.
-- **NumPy**: Fundamental package for numerical computations.
-- **Pandas**: Data manipulation and analysis library.
-- **Plotly**: Interactive graphing library.
-- **SciPy**: Library for scientific and technical computing.
+- Python 3.7+
+- Streamlit
+- NumPy
+- Pandas
+- Plotly
 
-All dependencies are listed in `requirements.txt` and can be installed via `pip`.
+Install the dependencies using:
+```bash
+pip install -r requirements.txt
+```
 
-## Features in Detail
+## Screenshot
 
-### Customizable Parameters
+Here is a screenshot of the app in action:
 
-- **Number of Assets**: Choose between 1 to 20 assets.
-- **Average Correlation**: Set the average correlation between assets, ranging from -1 to 1.
-- **Number of Years to Plot**: Select the investment horizon from 1 to 10 years.
-- **Mean Daily Return (%)**: Specify the expected mean daily return.
-- **Daily Volatility (%)**: Define the daily volatility of the assets.
-- **Risk-Free Rate (%)**: Input the risk-free rate for Sharpe and Sortino ratio calculations.
-
-### Interactive Charts
-
-- **Asset Price Simulation**: Visualize the simulated price paths of individual assets and the equally weighted portfolio.
-- **Dynamic Updates**: Charts update in real-time as you adjust the parameters.
-
-### Performance Metrics
-
-- **Total Cumulative Return**: Overall return over the investment period.
-- **Annualized Return**: Average yearly return.
-- **Annualized Volatility**: Yearly volatility of returns.
-- **Maximum Drawdown**: Largest peak-to-trough decline.
-- **Sharpe Ratio**: Risk-adjusted return measure.
-- **Sortino Ratio**: Variation of Sharpe Ratio considering downside risk.
-- **Calmar Ratio**: Measures return relative to maximum drawdown.
-
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. **Fork the Repository**
-
-   Click on the 'Fork' button at the top right of the repository page to create a copy on your account.
-
-2. **Clone Your Fork**
-
-   ```bash
-   git clone https://github.com/yourusername/PortfolioCorrelationSimulator.git
-   cd PortfolioCorrelationSimulator
-   ```
-
-3. **Create a Feature Branch**
-
-   ```bash
-   git checkout -b feature/YourFeature
-   ```
-
-4. **Commit Your Changes**
-
-   ```bash
-   git commit -am 'Add some feature'
-   ```
-
-5. **Push to the Branch**
-
-   ```bash
-   git push origin feature/YourFeature
-   ```
-
-6. **Open a Pull Request**
-
-   Go to the original repository and open a pull request from your feature branch.
+![App Screenshot](image.png)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Contact
-
-For any questions or suggestions, please open an issue or contact me at [your.email@example.com].
-
 ## Acknowledgments
 
-- **Streamlit Community**: For providing an excellent framework for rapid application development.
-- **Financial Modeling Resources**: For inspiration on financial metrics and portfolio simulations.
+- The application uses financial theories of asset returns, volatility, and correlation. Special thanks to the developers of [Streamlit](https://streamlit.io/), [NumPy](https://numpy.org/), [Pandas](https://pandas.pydata.org/), and [Plotly](https://plotly.com/) for the libraries that make this simulation possible.
 
-## Screenshots
+---
 
-![App Image](./image.png)
-
-## Author
-
-Made with ❤️ by [Chris](https://github.com/chrisduvillard)
-
-## Acknowledgments
-
-- Streamlit
-- Plotly
+Feel free to contribute by submitting issues or pull requests. Happy simulating!
