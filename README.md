@@ -54,18 +54,6 @@ This is a Python-based application that simulates asset prices in a portfolio, a
 - **Advanced Options:** Enable randomization of the mean returns and volatility across different assets.
 - **Visualizations and Metrics:** The app displays the asset prices and calculates performance metrics for each asset and the portfolio.
 
-## Performance Metrics
-
-- **Total Cumulative Return**
-- **Annualized Return**
-- **Annualized Volatility**
-- **Maximum Drawdown**
-- **Sharpe Ratio**
-- **Sortino Ratio**
-- **Calmar Ratio**
-
-Each of these metrics helps you understand the overall performance and risk profile of the portfolio under different market conditions.
-
 ## Dependencies
 
 - Python 3.7+
