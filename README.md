@@ -5,6 +5,8 @@ This is a Python-based application that simulates asset prices in a portfolio, a
 
 ![App Screenshot](image.png)
 
+![App Screenshot](image_1.png)
+
 ## Features
 
 - **Simulate asset prices:** Generate asset price paths using random returns based on user-defined or randomized mean returns and volatility.
@@ -77,12 +79,6 @@ Install the dependencies using:
 pip install -r requirements.txt
 ```
 
-## Screenshot
-
-Here is a screenshot of the app in action:
-
-![App Screenshot](image.png)
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -93,4 +89,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Feel free to contribute by submitting issues or pull requests. Happy simulating!
+Feel free to contribute by submitting issues or pull requests.
