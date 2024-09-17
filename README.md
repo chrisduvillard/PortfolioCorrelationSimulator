@@ -152,7 +152,13 @@ For any questions or suggestions, please open an issue or contact me at [your.em
 
 ## Screenshots
 
-*(Optional: Include screenshots or GIFs showcasing your application.)*
+![App Image](./image.png)
 
----
+## Author
 
+Made with ❤️ by [Chris](https://github.com/chrisduvillard)
+
+## Acknowledgments
+
+- Streamlit
+- Plotly
